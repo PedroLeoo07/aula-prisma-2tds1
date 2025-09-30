@@ -3,7 +3,7 @@ import { config } from "dotenv";
 import router from "./routes/index.routes.js";
 
 config(); // Carrega variáveis de ambiente do arquivo .env
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 
 // Inicializa o Express
 const app = express();

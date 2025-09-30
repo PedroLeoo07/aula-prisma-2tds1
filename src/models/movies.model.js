@@ -1,4 +1,4 @@
-import prisma from "../../prisma/prisma.js";
+import prisma from "../../prisma/prisma";
 
 class MovieModel {
   // Obter todos os filmes
