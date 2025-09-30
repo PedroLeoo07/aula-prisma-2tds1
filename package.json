@@ -1,0 +1,24 @@
+{
+  "name": "aulaprisma",
+  "version": "1.0.0",
+  "description": "Projeto de Back-End em Node.js com Prisma ORM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "NodeJS",
+    "Senai",
+    "JavaScript",
+    "Prisma",
+    "Backend"
+  ],
+  "author": "Leonardo Dev",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
