@@ -12,7 +12,7 @@ model Movie {
   title String
   category String
   duration Int
-  sinopsis String
+  sinopse String
   releaseYear Int
 
   createdAt DateTime @default(now())
