@@ -1,8 +1,8 @@
-import GameModel from "../models/game.model.js";
+import MovieModel from "../models/movies.model.js";
 
 class MovieController {
   async findAll(req, res) {
-    const { name, platform } = req.query;
+    const { title, category, duration, sinopse, releaseYear } = req.query;
 
     // console.log("Nome", name);
     // console.log("Plataforma", platform);
