@@ -1,6 +1,6 @@
 import GameModel from "../models/game.model.js";
 
-class GameController {
+class MovieController {
   async findAll(req, res) {
     const { name, platform } = req.query;
 
@@ -8,44 +8,47 @@ class GameController {
     // console.log("Plataforma", platform);
 
     try {
-      const games = await GameModel.findAll(name, platform);
+      const movies = await MovieModel.findAll();
 
-      return res.status(200).json(games);
+      return res.status(200).json(movies);
     } catch (error) {
-      console.error("Error finding all games", error);
+      console.error("Error finding all movies", error);
       return res
         .status(500)
-        .json({ message: "Error finding all games", error });
+        .json({ message: "Error finding all movies", error });
     }
   }
 
   async create(req, res) {
     try {
-      const { name, platform } = req.body;
+      const { title, category, duration, sinopse, releaseYear } = req.body;
 
       // Validação básica
-      if (!name || !platform) {
+      if (!title || !category || !duration || !sinopse || !releaseYear) {
         return res.status(400).json({
-          error: "Name and platform fields are required!",
+          error: "All fields are required!",
         });
       }
 
       const data = {
-        name,
-        platform,
+        title,
+        category,
+        duration,
+        sinopse,
+        releaseYear,
       };
 
-      const newGame = await GameModel.create(data);
+      const newMovie = await MovieModel.create(data);
 
-      return res.status(201).json({
-        message: "New game successufully created! DuoLingo singing!",
-        newGame,
-      });
+        return res.status(201).json({
+          message: "New movie successfully created!",
+          newMovie,
+        });
     } catch (error) {
-      console.error("Error creating a new game", error);
-      res.status(500).json({ error: "Error creating a new game" });
+      console.error("Error creating a new movie", error);
+      res.status(500).json({ error: "Error creating a new movie" });
     }
   }
 }
 
-export default new GameController();
+export default new MovieController();
